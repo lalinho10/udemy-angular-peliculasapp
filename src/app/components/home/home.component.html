@@ -1,0 +1,14 @@
+<div class="row">
+    <div class="col-sm-4">
+        <app-loading *ngIf="!nowPlaying" [icon]="'ticket'"></app-loading>
+        <app-carousel *ngIf="nowPlaying" [title]="'Cartelera'" [movies]="nowPlaying"></app-carousel>
+    </div>
+    <div class="col-sm-4">
+        <app-loading *ngIf="!popular" [icon]="'film'"></app-loading>
+        <app-carousel *ngIf="popular" [title]="'Populares'" [movies]="popular"></app-carousel>
+    </div>
+    <div class="col-sm-4">
+        <app-loading *ngIf="!popularAnimated" [icon]="'video'"></app-loading>
+        <app-carousel *ngIf="popularAnimated" [title]="'Animadas'" [movies]="popularAnimated"></app-carousel>
+    </div>
+</div>

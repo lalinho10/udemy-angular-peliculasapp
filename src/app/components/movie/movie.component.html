@@ -1,0 +1,28 @@
+<app-loading *ngIf="!movie.id" [icon]="'video'"></app-loading>
+<div *ngIf="movie.id" class="animated fadeIn">
+    <div class="row mb-4">
+        <div class="col col-sm-3">
+            <img [src]="movie.poster_path | noimage" width="200">
+        </div>
+        <div class="col col-sm-9">
+            <div class="row align-items-center">
+                <div class="col col-sm-2">
+                    <app-graphic [vote_average]="movie.vote_average"></app-graphic>
+                </div>
+                <div class="col col-sm-10">
+                    <h2>{{movie.title}} <small>({{movie.release_date}})</small></h2>
+                    <p>{{movie.tagline}}</p>
+                </div>
+            </div>
+            <hr>
+            <h3>Sinopsis</h3>
+            <p>{{movie.overview}}</p>
+            <p>Popularidad <span class="badge badge-info">{{movie.popularity | number:'.2-2'}}</span></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col col-sm-3">
+            <button type="button" class="btn btn-outline-danger" (click)="goBack()">Regresar</button>
+        </div>
+    </div>
+</div>
